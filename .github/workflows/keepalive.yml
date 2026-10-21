@@ -1,0 +1,13 @@
+name: Keep Supabase awake
+on:
+  schedule:
+    - cron: '0 3 * * *'   # every day, 12:00 Japan time
+  workflow_dispatch:      # adds a "Run workflow" button for testing
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -fsS -X POST "https://cpspsxaaunfacovvrfhq.supabase.co/rest/v1/rpc/keepalive" \
+            -H "apikey: sb_publishable_EMzgrBqXBIk7jt-Mb3VeFQ_xyS-nOOQ" \
+            -H "Content-Type: application/json" -d '{}'
