@@ -38,7 +38,7 @@ function topbar(store) {
   const inRoom = g && g.room.status !== 'closed';
   return `
     <header class="bar">
-      ${inRoom ? `<span class="bar-mark">Kuess-number</span><span class="bar-room">${t('room')} ${esc(g.room.code)}</span>` : '<span></span>'}
+      ${inRoom ? `<span class="bar-mark">Kuess</span><span class="bar-room">${t('room')} ${esc(g.room.code)}</span>` : '<span></span>'}
       <button class="kebab" data-act="openSettings" aria-label="${t('settings')}">⋮</button>
     </header>`;
 }
@@ -54,7 +54,7 @@ function home(store) {
         <div class="fan-c">${card({ name: t('you'), size: 'md' })}</div>
         <div class="fan-r">${card({ name: 'Ken', number: 42, size: 'md' })}</div>
       </div>
-      <h1 class="wordmark">Kuess-number</h1>
+      <h1 class="wordmark">Kuess</h1>
       <p class="tagline">${t('tagline')}</p>
 
       <form class="entry" data-submit="${store.joinOpen ? 'join' : 'newGame'}" novalidate>
